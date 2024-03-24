@@ -1,5 +1,5 @@
 #!/usr/bin/env bats
-load bats-extra
+load ../bats-extra
 BATS_RUN_SKIPPED=true
 
 # Square the sum of the numbers up to the given number
