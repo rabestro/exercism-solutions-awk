@@ -8,7 +8,7 @@ BEGIN {FS = ","}
 /last/ {print find_date(last_day($1, $2) - 6)}
 
 function weekday(day) {
-    return strftime("%A", mktime(sprintf("%4d %02d %02d 0 0 0", $1, $2, day)))
+    return strftime("%A", mktime($1" "$2" "day" 0 0 0"))
 }
 function find_date(startDay,    day) {
     for (day = startDay + 6; day >= startDay; --day)
@@ -17,5 +17,5 @@ function find_date(startDay,    day) {
 }
 function last_day(year, month) {
     if (++month == 13) {++year; month = 1}
-    return strftime("%d", mktime(year " " month " 01 0 0 0") - 1)
+    return strftime("%d", mktime(year " " month " 1 0 0 0") - 1)
 }
