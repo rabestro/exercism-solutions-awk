@@ -13,20 +13,18 @@ BEGIN {
     score = $1 % 256
 }
 /allergic_to/ {
-    print isAlegric(score, Items[$3]) ? "true" : "false"
+    print isAllegric(score, Items[$3]) ? "true" : "false"
 }
 /list/ {
     NF = 0
     for (i = 1; i <= 128; i *= 2)
-        if (isAlegric(score, i))
+        if (isAllegric(score, i))
             $(++NF) = itemName(i)
     print
 }
 
-function isAlegric(score, item,   i) {
-    for (i = 128; i > item; i /= 2)
-        if (score >= i) score -= i
-    return score >= item
+function isAllegric(score, item) {
+    return and(score, item) == item
 }
 
 function itemName(score,   name) {
