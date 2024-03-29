@@ -2,7 +2,7 @@
 # - num
 
 BEGIN {
-    print isAmstrong(num) ? "true" : "false"
+    print isArmstrong(num) ? "true" : "false"
 }
 
 function isArmstrong(number,   power,sum,i) {
