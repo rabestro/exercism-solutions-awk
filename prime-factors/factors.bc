@@ -1,0 +1,13 @@
+#!/usr/bin/bc
+number = read()
+
+factor = 2
+while (factor <= number) {
+    if (number % factor) {
+        factor += 1
+        continue
+    }
+    print factor, " "
+    number /= factor
+}
+quit
