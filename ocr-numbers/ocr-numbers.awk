@@ -2,9 +2,9 @@ BEGIN {
     RS = ""
     FS = "\n"
     DigitWidth = 3
-    DigitHight = 4
+    DigitHeight = 4
 }
-NF % DigitHight {
+NF % DigitHeight {
     die("Number of input lines is not a multiple of four")
 }
 length($1) % DigitWidth {
@@ -15,7 +15,7 @@ length($1) % DigitWidth {
 }
 
 function number(   col,row,result) {
-    for (row = 1; row < NF; row += 4) {
+    for (row = 1; row < NF; row += DigitHeight) {
         if (row > 1) result = result","
         for (col = 1; col < length($row); col += DigitWidth)
             result = result digit(row, col)
