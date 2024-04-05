@@ -11,9 +11,5 @@ BEGIN {
     if (num % 7 == 0) {
         result = result "Plong"
     }
-    if (! result) {
-        result = num
-    }
-
-    print result
+    print result ? result : num
 }
