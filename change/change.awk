@@ -12,8 +12,12 @@
 NR == 1 {
     Dmax = split($0, Denominations); next
 }
-$0 < 0 {die("target can't be negative")}
-{print change($0)}
+$0 < 0 {
+    die("target can't be negative")
+}
+{
+    print change($0)
+}
 
 function change(amount,    i,j,size,key,value,changes,amounts,total,coin) {
     size = 1
