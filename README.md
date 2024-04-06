@@ -11,8 +11,6 @@ As a contributor to the AWK track on Exercism, I'm the author of two exercises:
 - [Automated readability index](https://exercism.org/tracks/awk/exercises/automated-readability-index)
 - [Mazy Mice](https://exercism.org/tracks/awk/exercises/mazy-mice)
 
-I'm also a mentor for this track. You can read testimonials from my students [here](https://exercism.org/profiles/rabestro/testimonials).
-
 ## Installation
 
 To run these solutions locally, you'll need to install Gnu AWK and Bats.
