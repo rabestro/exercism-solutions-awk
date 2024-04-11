@@ -1,0 +1,47 @@
+Act as an experienced AWK and Bash developer.
+
+Below is an example of test for one of our existing exercises:
+```
+#!/usr/bin/env bats
+load bats-extra
+
+@test "change for 1 cent" {
+    #[[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f change.awk <<END_INPUT
+1 5 10 25
+1
+END_INPUT
+    assert_success
+    assert_output "1"
+}
+
+@test "error testing for change smaller than the smallest of coins" {
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    run gawk -f change.awk <<END_INPUT
+5 10
+3
+END_INPUT
+    assert_failure
+    assert_output "can't make target with given coins"
+}
+```
+
+We need to create a bats tests for our new exercise for AWK track on site Exercism.
+
+The exercise descriptions is
+"""
+{{description}}
+"""
+
+The sample solution is
+```awk
+{{solution}}
+```
+
+The test cases described in json:
+```json
+{{testCases}}
+```
+
+Your task is to analyse the description, sample solution and test cases and create tests for the exercise.
+If you have any questions feel free to ask me before you start processing.
