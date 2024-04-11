@@ -3,8 +3,16 @@
 # - takeDown
 
 BEGIN {
-    split("One Two Three Four Five Six Seven Eight Nine Ten", Numbers)
+    init_numbers()
+    print_lyric()
+}
 
+function init_numbers() {
+    split("One Two Three Four Five Six Seven Eight Nine Ten", Numbers)
+    Numbers[0] = "no"
+}
+
+function print_lyric() {
     while (takeDown--) {
         print_verse(startBottles--)
         if (takeDown) print ""
@@ -23,7 +31,7 @@ function first_line(bottles) {
 }
 
 function last_line(bottles) {
-    return "There'll be " tolower(bottles == 0 ? "no" : Numbers[bottles]) hanging(bottles) "."
+    return "There'll be " tolower(Numbers[bottles]) hanging(bottles) "."
 }
 
 function hanging(bottles) {
