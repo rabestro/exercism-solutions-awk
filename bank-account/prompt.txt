@@ -26,10 +26,9 @@ END_INPUT
 }
 ```
 
-We need to create bats tests for our new exercise for the AWK track on the Exercism site.
-The exercise description is
+We must create bats tests for our new exercise for the AWK track on the Exercism site.
 
-The exercise descriptions is
+The exercise description is
 """
 {{description}}
 """
