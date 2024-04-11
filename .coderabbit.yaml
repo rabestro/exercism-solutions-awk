@@ -17,5 +17,6 @@ reviews:
     - '!**/*.xml'
     - '!**/*.md'
     - '!**/*.bats'
+    - '!**/bats-extra.bash'
 chat:
   auto_reply: true
