@@ -2,14 +2,14 @@ BEGIN {
     FPAT = "[[:alpha:]]"
 }
 {
-    previous_letters = ""
+    delete Letters
     for (i = NF; i; --i) {
         letter = tolower($i)
-        if (index(previous_letters, letter)) {
+        if (Letters[letter]) {
             print "false"
             next
         }
-        previous_letters = previous_letters letter
+        Letters[letter] = 1
     }
     print "true"
 }
