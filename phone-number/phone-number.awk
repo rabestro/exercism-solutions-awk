@@ -18,7 +18,7 @@ NF == 11 && $1 != "1" {
     die("11 digits must start with 1")
 }
 NF == 11 && $1 == 1 {
-    $0 = gensub(/1/, "", 1)
+    sub(/1/, "")
 }
 $1 == 0 {
     die("area code cannot start with zero")
