@@ -18,6 +18,7 @@ END {
 }
 
 function compare_students(name1, grade1, name2, grade2) {
-    if (grade1 != grade2) return grade1 - grade2
+    if (grade1 != grade2)
+        return grade1 - grade2
     return name1 < name2 ? -1 : 1
 }
