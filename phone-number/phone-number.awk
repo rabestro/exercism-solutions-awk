@@ -33,6 +33,6 @@ $4 == 1 {
     die("exchange code cannot start with one")
 }
 
-$1 {$1 = $1} 1
+{$1 = $1} 1
 
 function die(message) {print message > "/dev/stderr"; exit 1}
