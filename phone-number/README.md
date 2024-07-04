@@ -1,4 +1,9 @@
-# Description
+# Phone Number
+
+Welcome to Phone Number on Exercism's AWK Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
 
 Clean up user-entered phone numbers so that they can be sent SMS messages.
 
@@ -32,3 +37,13 @@ should all produce the output
 `6139950253`
 
 **Note:** As this exercise only deals with telephone numbers used in NANP-countries, only 1 is considered a valid country code.
+
+## Source
+
+### Created by
+
+- @glennj
+
+### Based on
+
+Exercise by the JumpstartLab team for students at The Turing School of Software and Design. - https://turing.edu
