@@ -24,7 +24,7 @@ BEGIN {
 !Rank && match(Hand, /(.1)?(.2)(.1)?(.2)(.1)?/, m) {
     Rank = "G"m[2]m[4]m[1]m[3]m[5]
 }
-!Rank && match(Hand, /(.*)?(.2)(.*)?/, m) {
+!Rank && match(Hand, /^(.*)?(.2)(.*)?$/, m) {
     Rank = "H"m[2]m[1]m[3]
 }
 !Rank {
