@@ -1,9 +1,6 @@
 BEGIN {
-    FPAT="[.*]"
+    FPAT = "[.*]"
     OFS = ""
-}
-NR == 1 {
-    Width = NF
 }
 {
     for (col = NF; col; --col)
@@ -11,21 +8,18 @@ NR == 1 {
 }
 END {
     while (row++ < NR) {
-        for (col = Width; col; --col)
+        for (col = NF; col; --col)
             $col = print_cell(row, col)
         print
     }
 }
 
-function print_cell(row, col,   mines) {
+function print_cell(row, col,   mines,i,x,y) {
     if (Field[row, col]) return "*"
-    mines = Field[row - 1, col - 1] \
-        + Field[row - 1, col] \
-        + Field[row - 1, col + 1] \
-        + Field[row, col - 1] \
-        + Field[row, col + 1] \
-        + Field[row + 1, col - 1] \
-        + Field[row + 1, col] \
-        + Field[row + 1, col + 1]
+    for (i = 0; i < 9; i++) {
+        x = row + int(i / 3) - 1
+        y = col + i % 3 - 1
+        mines += Field[x, y]
+    }
     return mines ? mines : "."
 }
