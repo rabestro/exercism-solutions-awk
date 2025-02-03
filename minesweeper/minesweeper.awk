@@ -7,14 +7,14 @@ BEGIN {
         Field[NR, col] = $col == "*"
 }
 END {
-    while (row++ < NR) {
+    for (row = 1; row <= NR; ++row) {
         for (col = NF; col; --col)
-            $col = print_cell(row, col)
+            $col = count_mines(row, col)
         print
     }
 }
 
-function print_cell(row, col,   mines,i,x,y) {
+function count_mines(row, col,   mines,i,x,y) {
     if (Field[row, col]) return "*"
     for (i = 0; i < 9; i++) {
         x = row + int(i / 3) - 1
