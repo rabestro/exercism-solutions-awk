@@ -1,10 +1,7 @@
 BEGIN {
-    FS = "[^[:alnum:]']"
+    RS = "[^[:alnum:]']"
+    ORS = FS = ""
 }
 {
-    acronym = ""
-    for (; NF; --NF) {
-        acronym = substr($NF, 1, 1) acronym
-    }
-    print toupper(acronym)
+    print toupper($1)
 }
